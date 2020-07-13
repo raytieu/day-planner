@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -30,9 +31,24 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
+      <div class="row description">
+        <div class="col-1 time-block">
+          <p>9am</p>
+          <button id="clear" type="button">Clear</button>
+        </div>
+        <div class="col-8 detail">
+          <textarea id="textarea" name="textarea" rows="4" cols="70"></textarea>
+        </div>
+        <div class="col-1 saveBtn">
+          <p>Save</p>
+        </div>
+      </div>
+      
     </div>
-
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/planner.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
 </html>
