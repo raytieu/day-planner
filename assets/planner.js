@@ -42,9 +42,28 @@ $(document).ready(function() {
         createSaveImg[i-9].attr("class", "fa fa-save");
         createButton[i-9].append(createSaveImg[i-9]);
 
+        let blockHour = createHour[i-9].attr("data-hour");
+        let momentHour = moment().hour();
+
+        console.log(blockHour);
+        console.log(momentHour);
+        console.log(typeof(momentHour));
+
+        if (blockHour == momentHour) {
+            createTextarea[i-9].addClass("present");
+        }
+        else if (blockHour < momentHour) {
+            createTextarea[i-9].addClass("past");
+        }
+        else if (blockHour > momentHour) {
+            createTextarea[i-9].addClass("future");
+        }
+
     }
     
     $(".saveBtn").click(storeText);
+
+    retrieveText();
 
     function storeText() {
 
@@ -68,8 +87,6 @@ $(document).ready(function() {
         }
     }
 
-    retrieveText();
-
     let clearBtn = $("<button>");
     clearBtn.attr("id", "clear");
     clearBtn.html("Clear Timeblocks");
@@ -81,5 +98,6 @@ $(document).ready(function() {
     });
     
 });
+
 
 

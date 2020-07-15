@@ -24,11 +24,25 @@
   </head>
 
   <body>
+
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p><br>
+      <p class="lead"><em>A simple calendar app for scheduling your work day.</em></p>
+      <br>
+      <p>
+        <strong>Timeblocks are color-coded, by hour, as follows: </strong>
+        <span style="background-color: #d3d3d3; padding: 3px;">Past</span> 
+        <span style="background-color: #e69e9a; padding: 3px;">Current</span> 
+        <span style="background-color: #77dd77; padding: 3px;">Future</span>
+      </p>
+      <p>Press the Save button at the end of each timeblock to save that hour's detail.</p>
+      <p>Click the "Clear Timeblocks" button to clear your stored work-day details.</p>
+      <br>
+      <p><strong>The Date and Time is:</strong></p>
+      <p id="currentDay" class="lead"></p>
+      <br>
     </header>
+
     <div class="container">
       <!-- Timeblocks go here -->
     </div>
@@ -36,22 +50,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="assets/planner.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
   </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="row time-block">
-        <div class="col-1 hour"></div>
-        <textarea class="col-10 description"></textarea>
-        <button class="col-1 saveBtn"><i class="fa fa-save"></i></button>
-      </div> -->
