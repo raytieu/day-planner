@@ -73,4 +73,9 @@ textarea {
 
 #clear {
   padding: 10px;
+  margin: 0px 75px 0px 0px;
+}
+
+#refresh {
+  padding: 10px;
 }

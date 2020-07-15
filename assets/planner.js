@@ -96,6 +96,15 @@ $(document).ready(function() {
         localStorage.clear();
         location.reload();
     });
+
+    let refreshBtn = $("<button>");
+    refreshBtn.attr("id", "refresh");
+    refreshBtn.html("Refresh Timeblocks");
+    $("header").append(refreshBtn);
+
+    refreshBtn.click(function() {
+        location.reload();
+    });
     
 });
 
