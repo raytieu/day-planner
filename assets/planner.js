@@ -45,10 +45,6 @@ $(document).ready(function() {
         let blockHour = createHour[i-9].attr("data-hour");
         let momentHour = moment().hour();
 
-        console.log(blockHour);
-        console.log(momentHour);
-        console.log(typeof(momentHour));
-
         if (blockHour == momentHour) {
             createTextarea[i-9].addClass("present");
         }
