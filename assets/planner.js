@@ -89,8 +89,12 @@ $(document).ready(function() {
     $("header").append(clearBtn);
 
     clearBtn.click(function() {
-        localStorage.clear();
-        location.reload();
+        let askConfirm = confirm("Are you sure you want to clear all timeblocks?");
+
+        if (askConfirm) {
+            localStorage.clear();
+            location.reload();
+        }
     });
 
     let refreshBtn = $("<button>");
