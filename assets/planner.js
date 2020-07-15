@@ -102,6 +102,17 @@ $(document).ready(function() {
         location.reload();
     });
     
+    let saveAllBtn = $("<button>");
+    saveAllBtn.attr("id", "save-all");
+    saveAllBtn.html("Save All Timeblocks");
+    $("header").append(saveAllBtn);
+
+    saveAllBtn.click(function() {
+        for (let i = 9; i < 18; i++) { 
+            let saveText = createTextarea[i-9].attr("data-text", i).val();
+            localStorage.setItem("textarea" + i, saveText); 
+        }
+    });
 });
 
 
