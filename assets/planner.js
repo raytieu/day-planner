@@ -43,8 +43,6 @@ $(document).ready(function() {
         createButton[i-9].append(createSaveImg[i-9]);
 
     }
-
-    retrieveText();
     
     $(".saveBtn").click(storeText);
 
@@ -70,6 +68,8 @@ $(document).ready(function() {
         }
     }
 
+    retrieveText();
+
     let clearBtn = $("<button>");
     clearBtn.attr("id", "clear");
     clearBtn.html("Clear Timeblocks");
@@ -77,7 +77,7 @@ $(document).ready(function() {
 
     clearBtn.click(function() {
         localStorage.clear();
-        retrieveText();
+        location.reload();
     });
     
 });
