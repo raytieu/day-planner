@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     let dateTime = moment().format('MMMM Do YYYY, h:mm:ss a');
-    $("#currentDay").text(dateTime);
+    $("#currentDay").html(dateTime);
 
     let createRow = [9, 10, 11, 12, 13, 14, 15, 16, 17];
     let createHour = [9, 10, 11, 12, 13, 14, 15, 16, 17];
@@ -13,6 +13,7 @@ $(document).ready(function() {
 
         createRow[i-9] = $("<row>");
         createRow[i-9].attr("class", "row time-block");
+        createRow[i-9].attr("data-row", i);
         $(".container").append(createRow[i-9]);
 
         createHour[i-9] = $("<div>");
@@ -24,14 +25,17 @@ $(document).ready(function() {
         } else {
             createHour[i-9].html((i-12) + " pm");
         }
+        createHour[i-9].attr("data-hour", i);
         createRow[i-9].append(createHour[i-9]);
 
         createTextarea[i-9] = $("<textarea>");
         createTextarea[i-9].attr("class", "col-10 description");
+        createTextarea[i-9].attr("data-text", i);
         createRow[i-9].append(createTextarea[i-9])
 
         createButton[i-9] = $("<button>");
         createButton[i-9].attr("class", "col-1 saveBtn");
+        createButton[i-9].attr("data-save", i);
         createRow[i-9].append(createButton[i-9]);
 
         createSaveImg[i-9] = $("<i>");
@@ -40,23 +44,41 @@ $(document).ready(function() {
 
     }
 
-    let enterText = $(".description"); 
-
+    retrieveText();
+    
     $(".saveBtn").click(storeText);
 
     function storeText() {
-        // textBox.html(textBox.val());
-        localStorage.setItem("textarea", enterText.val()); 
+
+        let hourNum = $(this).attr("data-save");
+        let saveText = createTextarea[hourNum-9].attr("data-text", hourNum).val();
+        localStorage.setItem("textarea" + hourNum, saveText); 
+        console.log(localStorage);
+
     }
 
     function retrieveText() {
-        let getText = localStorage.getItem("textarea");
-        $(".description").html(getText);    
+
+        let getText = [9, 10, 11, 12, 13, 14, 15, 16, 17];
+
+        for (let i = 9; i < 18; i++) {
+
+            getText[i-9] = localStorage.getItem("textarea" + i);
+            let printText = createTextarea[i-9].attr("data-text", i);
+            printText.html(getText[i-9]);  
+
+        }
     }
 
-    retrieveText();
+    let clearBtn = $("<button>");
+    clearBtn.attr("id", "clear");
+    clearBtn.html("Clear Timeblocks");
+    $("header").append(clearBtn);
 
-    console.log(localStorage);
+    clearBtn.click(function() {
+        localStorage.clear();
+        retrieveText();
+    });
     
 });
 
