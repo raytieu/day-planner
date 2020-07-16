@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+    <!-- Bootstrap Link -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
+
+    <!-- Used for Save button symbol -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
+
+    <!-- Used for Open Sans font family -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Link to external stylesheet  -->
     <link rel="stylesheet" href="assets/style.css" />
+
+    <!-- Title in browser tab -->
     <title>Work Day Scheduler</title>
+
   </head>
 
   <body>
 
+    <!-- Description of the Work Day Scheduler -->
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead"><em>A simple calendar app for scheduling your work day.</em></p>
       <br>
       <p>
         <strong>Timeblocks are color-coded, by hour, as follows: </strong>
-        <span style="background-color: #d3d3d3; padding: 3px;">Past</span> 
-        <span style="background-color: #e69e9a; padding: 3px;">Current</span> 
-        <span style="background-color: #77dd77; padding: 3px;">Future</span>
+        <span style="background-color: #d3d3d3; padding: 0px 3px 0px 3px;">Past</span> 
+        <span style="background-color: #e69e9a; padding: 0px 3px 0px 3px;">Current</span> 
+        <span style="background-color: #77dd77; padding: 0px 3px 0px 3px;">Future</span>
       </p>
       <p>Press the Save button at the end of each timeblock to save that hour's detail.</p>
       <br>
@@ -41,6 +54,8 @@
       <p>Click the "Refresh Timeblocks" button to reload the page with your saved work-day details.</p>
       <p>Click the "Save All Timeblocks" to save all timeblocks with one click.</p>
       <br>
+
+      <!-- Date and Time provided by moment.js -->
       <p><strong>The Date and Time is:</strong></p>
       <p id="currentDay" class="lead"></p>
       <br>
@@ -50,6 +65,7 @@
       <!-- Timeblocks go here -->
     </div>
 
+    <!-- Script files: JQuery Library, External JS file, Moment.js file -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="assets/planner.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

@@ -1,9 +1,11 @@
+/* Formatting for the HTML body */
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
 
+/* Formatting for the textarea where we enter text */
 textarea { 
   background: transparent;
   border: none;
@@ -13,6 +15,7 @@ textarea {
   padding: 10px;
 }
 
+/* Formatting for the details in the jumbotron */
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -21,21 +24,25 @@ textarea {
   border-bottom: 10px solid black;
 }
 
+/* For textarea */
 .description{
   white-space: pre-wrap;
 }
 
+/* Formatting for each timeblock row */
 .time-block{
   text-align: center;
   border-radius: 15px;
 }
 
+/* Formatting for each timeblock row */
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;;
 }
 
+/* Formatting for hour column */
 .hour {
   background-color: #ffffff;
   color: #000000;
@@ -43,21 +50,25 @@ textarea {
   font-size: 15px;
 }
 
+/* Color for past timeblocks */
 .past {
   background-color: #d3d3d3;
   color: black;
 }
 
+/* Color for current timeblock */
 .present {
   background-color: #e69e9a;
   color: black;
 }
 
+/* Color for future timeblocks */
 .future {
   background-color: #77dd77;
   color: black;
 }
 
+/* Formatting for Save Button column */
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -66,16 +77,29 @@ textarea {
   color: white;
 }
 
+/* Formatting for hovering over each save button */
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
 
+/* Added padding for clear and save-all buttons */
 #clear, #save-all {
   padding: 10px;
 }
 
+/* Padding for refresh button and margins to space out buttons */
 #refresh {
   padding: 10px;
-  margin: 0px 75px 0px 75px;
+  margin: 0px 50px 0px 50px;
 }
+
+/* Change color for hovering over clear, refresh, and save-all buttons */
+.motion:hover {
+  background-color: rgb(206, 206, 214);
+}
+
+/* Movement and color for clicking clear, refresh, and save-all buttons */
+.motion:active {
+  background-color: rgb(206, 206, 214);
+  transform: translateY(3px);
