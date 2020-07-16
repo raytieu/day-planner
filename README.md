@@ -9,5 +9,5 @@ Additionally provided are buttons that:
 
 https://raytieu.github.io/day-planner/
 
-![description and time](assets/jumbotron.png)
+
 ![timeblocks](assets/timeblocks.png)
